@@ -65,58 +65,9 @@ export function useEmbeddedEditorMessage(
       signature,
     })
   }
-  /** --------------------------------------------------------------------------------------------------------------- */
-  /** This is part only for AgorApp IDE, will not be exposed as public ---------------------------------------------- */
-  /** --------------------------------------------------------------------------------------------------------------- */
-  const submitSolution = (type: 'metamask', publicKey: string, solution: string) => {
-    const uuid = uuidv4()
-    handleOutboundMessage({
-      type: 'sign-request',
-      payload: JSON.stringify({
-        action: 'submit-solution',
-        solution,
-        identity: {
-          type,
-          value: publicKey,
-        },
-        uuid,
-      }),
-    })
-    return new Promise<AgorAppMessage>((resolve, reject) => {
-      setPromises((prev) => [...prev, { uuid, resolve, reject }])
-    })
-  }
-  const signIdentity = (type: 'metamask', publicKey: string): Promise<any> => {
-    const uuid = uuidv4()
-    handleOutboundMessage({
-      type: 'sign-request',
-      payload: JSON.stringify({
-        action: 'sign-identity',
-        identity: {
-          type,
-          value: publicKey,
-        },
-        uuid,
-      }),
-    })
-    return new Promise<AgorAppMessage>((resolve, reject) => {
-      setPromises((prev) => [...prev, { uuid, resolve, reject }])
-    })
-  }
-  const sendReady = useCallback(() => {
-    handleOutboundMessage({
-      type: 'ready',
-      payload: JSON.stringify({
-        action: 'ready',
-      }),
-    })
-  }, [handleOutboundMessage])
   return {
     setIdentity,
-    submitSolution,
     signResponse,
-    signIdentity,
-    sendReady,
     loggerList,
   }
 }
