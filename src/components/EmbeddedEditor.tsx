@@ -13,7 +13,7 @@ export interface IEmbeddedEditor {
 
 export const EmbeddedEditor = forwardRef<HTMLIFrameElement, IEmbeddedEditor>(function EmbeddedEditor(
   { aspectRatio, brand, hideTheory, courseSlug, lessonSlug, style },
-  ref2,
+  ref?,
 ) {
   const id = useId()
 
@@ -67,7 +67,7 @@ export const EmbeddedEditor = forwardRef<HTMLIFrameElement, IEmbeddedEditor>(fun
     >
       <iframe
         title='AgorApp Web3 IDE'
-        ref={ref2}
+        ref={ref}
         src={src}
         allowFullScreen
         id={id}
