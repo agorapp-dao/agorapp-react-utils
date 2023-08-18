@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { useRef } from 'react'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-import { EmbeddedEditor, useEmbeddedEditorMessage, AgorAppMessage } from 'agorapp-react-utils-test'
+import { EmbeddedEditor, useEmbeddedEditorMessage, AgorAppMessage } from 'agorapp-react-utils'
 
 export const EmbeddedTest = () => {
   const ref = useRef<HTMLIFrameElement | null>(null)

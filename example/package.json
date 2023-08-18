@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "agorapp-react-utils-test": "^1.0.0",
+    "agorapp-react-utils": "^1.0.0",
     "my-react-typescript-package": "^1.0.0",
     "parcel": "^2.9.3",
     "react": "^18.2.0",

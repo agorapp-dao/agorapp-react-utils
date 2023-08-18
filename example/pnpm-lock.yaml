@@ -11,7 +11,7 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.7
-  agorapp-react-utils-test:
+  agorapp-react-utils:
     specifier: ^1.0.0
     version: 1.0.0(react@18.2.0)
   my-react-typescript-package:
@@ -1102,12 +1102,13 @@ packages:
     resolution: {integrity: sha512-JMJ5soJWP18htbbxJjG7bG6yuI6pRhgJ0scHHTfkUjf6wjP912xZWvM+A4sJK3gqd9E8fcPbDnOefbA9Th/FIQ==}
     dev: true
 
-  /agorapp-react-utils-test@1.0.0(react@18.2.0):
-    resolution: {integrity: sha512-Kst7LOkjcFzMe2xxmqf5WRgyrAb5YaNVsHAdcBuc/IkE56Qc9gcIIBjJ1egAP/kNk3I38qBW0ofFOEeHk+CmDg==}
+  /agorapp-react-utils@1.0.0(react@18.2.0):
+    resolution: {integrity: sha512-GXZstQTO0FaASQLUOZ0rNyIuSV+mOlVE9AirwmM5e26fBdLII2DCpYkbAPthmDw97qDfC4U5/EMoQxXVN1Ajlg==}
     peerDependencies:
       react: '>=16'
     dependencies:
       react: 18.2.0
+      uuid: 9.0.0
     dev: true
 
   /ansi-styles@3.2.1:
@@ -1903,6 +1904,11 @@ packages:
   /utility-types@3.10.0:
     resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
     engines: {node: '>= 4'}
+    dev: true
+
+  /uuid@9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
     dev: true
 
   /weak-lru-cache@1.2.2:
