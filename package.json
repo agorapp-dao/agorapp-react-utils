@@ -1,5 +1,5 @@
 {
-  "name": "agorapp-react-utils-test",
+  "name": "agorapp-react-utils",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petrhavel2/agorapp-react-utils-test.git"
+    "url": "git+https://github.com/agorapp-dao/agorapp-react-utils.git"
   },
   "keywords": [],
   "author": "Petr Havel (petrhavel2)",
   "license": "ISC",
   "dependencies": {
-    "agorapp-react-utils-test": "^1.0.0",
+    "agorapp-react-utils": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^9.0.0"

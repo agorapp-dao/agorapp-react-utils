@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  agorapp-react-utils-test:
+  agorapp-react-utils:
     specifier: ^1.0.0
     version: 1.0.0(react@18.2.0)
   react:
@@ -1367,12 +1367,13 @@ packages:
     hasBin: true
     dev: true
 
-  /agorapp-react-utils-test@1.0.0(react@18.2.0):
-    resolution: {integrity: sha512-Kst7LOkjcFzMe2xxmqf5WRgyrAb5YaNVsHAdcBuc/IkE56Qc9gcIIBjJ1egAP/kNk3I38qBW0ofFOEeHk+CmDg==}
+  /agorapp-react-utils@1.0.0(react@18.2.0):
+    resolution: {integrity: sha512-GXZstQTO0FaASQLUOZ0rNyIuSV+mOlVE9AirwmM5e26fBdLII2DCpYkbAPthmDw97qDfC4U5/EMoQxXVN1Ajlg==}
     peerDependencies:
       react: '>=16'
     dependencies:
       react: 18.2.0
+      uuid: 9.0.0
     dev: false
 
   /ajv@6.12.6:

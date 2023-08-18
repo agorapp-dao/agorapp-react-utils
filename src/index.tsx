@@ -7,7 +7,7 @@ import {
   EmbeddedEditor,
   useEmbeddedEditorMessage,
   AgorAppMessage,
-} from "agorapp-react-utils-test";
+} from "agorapp-react-utils";
 
 export const EmbeddedTest = () => {
   const ref = useRef<HTMLIFrameElement | null>(null);
