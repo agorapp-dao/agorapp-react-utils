@@ -36,6 +36,9 @@
     "LICENSE",
     "README.md"
   ],
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
@@ -57,7 +60,6 @@
     "react-dom": "^18.2.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.1",
-    "typescript": "^5.1.6",
-    "uuid": "^9.0.0"
+    "typescript": "^5.1.6"
   }
 }
