@@ -26,10 +26,8 @@ Add `EmbeddedEditor` to your component:
 
 ```tsx
 export const YourComponent = () => {
-  const ref = useRef<HTMLIFrameElement | null>(null)
   return (
     <EmbeddedEditor
-      ref={ref}
       aspectRatio={'4:3'}
       courseSlug={'solidity'}
       lessonSlug={'optimized-array-sum'}

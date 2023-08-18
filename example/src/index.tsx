@@ -1,11 +1,12 @@
-import React, { useRef } from 'react'
-import ReactDOM from 'react-dom/client'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import { useRef } from 'react'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 import { EmbeddedEditor, useEmbeddedEditorMessage, AgorAppMessage } from 'agorapp-react-utils-test'
 
 export const EmbeddedTest = () => {
   const ref = useRef<HTMLIFrameElement | null>(null)
-  const publicKey = '0x6b175474e89094c44da98b954eedeac495271d0f'
+  const publicKey = 'PUBLIC_KEY_OF_THE_USER'
   const { setIdentity } = useEmbeddedEditorMessage(
     async (message: AgorAppMessage) => {
       switch (message.type) {
@@ -24,8 +25,8 @@ export const EmbeddedTest = () => {
     <EmbeddedEditor
       ref={ref}
       aspectRatio={'4:3'}
-      courseSlug='introduction-to-solidity'
-      lessonSlug={'01-contract-declaration'}
+      courseSlug={'solidity'}
+      lessonSlug={'optimized-array-sum'}
       style={{ border: '1px solid #fff', borderRadius: '15px' }}
     />
   )
