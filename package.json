@@ -2,7 +2,6 @@
   "name": "agorapp-react-utils-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --dist-dir docs --public-url .",
@@ -15,20 +14,24 @@
   "keywords": [],
   "author": "Petr Havel (petrhavel2)",
   "license": "ISC",
+  "dependencies": {
+    "agorapp-react-utils-test": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
-    "agorapp-react-utils-test": "^1.0.0",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "my-react-typescript-package": "^1.0.0",
     "parcel": "^2.9.3",
     "process": "^0.11.10",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "tslib": "^2.6.1",
     "typescript": "^5.1.6"
   }
 }
