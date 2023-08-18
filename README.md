@@ -7,18 +7,18 @@
 
 The AgorApp Web3 IDE Editor can be seamlessly integrated into partner websites with this package.
 
-[**Live Demo**](https://petrhavel2.github.io/agorapp-react-utils-test/)
+[**Live Demo**](https://agorapp-dao.github.io/agorapp-react-utils/)
 
 ## Installation: 
 
 ```bash
-pnpm add agorapp-react-utils-test
+pnpm add agorapp-react-utils
 ```
 
 or
 
 ```bash
-yarn add agorapp-react-utils-test
+yarn add agorapp-react-utils
 ```
 
 ## Basic usage:
@@ -200,10 +200,10 @@ The real message will look something like this:
 ```
 
 
-[npm-url]: https://www.npmjs.com/package/agorapp-react-utils-test
-[npm-image]: https://img.shields.io/npm/v/agorapp-react-utils-test
-[github-license]: https://img.shields.io/github/license/petrhavel2/agorapp-react-utils-test
-[github-license-url]: https://github.com/petrhavel2/agorapp-react-utils-test/blob/main/LICENSE
-[github-build]: https://github.com/petrhavel2/agorapp-react-utils-test/actions/workflows/publish.yml/badge.svg
-[github-build-url]: https://github.com/petrhavel2/agorapp-react-utils-test/actions/workflows/publish.yml
-[npm-typescript]: https://img.shields.io/npm/types/agorapp-react-utils-test
+[npm-url]: https://www.npmjs.com/package/agorapp-react-utils
+[npm-image]: https://img.shields.io/npm/v/agorapp-react-utils
+[github-license]: https://img.shields.io/github/license/agorapp-dao/agorapp-react-utils
+[github-license-url]: https://github.com/agorapp-dao/agorapp-react-utils/blob/main/LICENSE
+[github-build]: https://github.com/agorapp-dao/agorapp-react-utils/actions/workflows/publish.yml/badge.svg
+[github-build-url]: https://github.com/agorapp-dao/agorapp-react-utils/actions/workflows/publish.yml
+[npm-typescript]: https://img.shields.io/npm/types/agorapp-react-utils
