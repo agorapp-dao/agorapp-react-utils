@@ -52,9 +52,7 @@ export const EmbeddedEditor = forwardRef<HTMLIFrameElement, IEmbeddedEditor>(fun
     return p
   }, [brand, hideTheory])
 
-  let src = `${AGORAPP_URL}/editor2/${courseSlug}/${lessonSlug}?${iframeParams.toString()}`
-
-  src = `${AGORAPP_URL}/ide-embed/solidity/optimized-array-sum?hideTheory=1&brand=rare-skills&id=${id}`
+  const src = `${AGORAPP_URL}/ide-embed/${courseSlug}/${lessonSlug}?${iframeParams.toString()}&id=${id}`
 
   return (
     <div
