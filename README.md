@@ -114,8 +114,13 @@ export const YourComponent = () => {
 }
 ```
 
+As the first argument of `useEmbeddedEditorMessage` is **Message handler** function. Over this function you will handle the messages sent from the IDE.
+
+Complete code with example of signing the message with MetaMask wallet: [**Live Demo**](https://agorapp-dao.github.io/agorapp-react-utils/)
+
 ### Message format
-Each message from Partner to AgorApp will follow the following structure:
+
+Each `Message` received by **Message handler** will follow this structure:
 ```json
 {
   "type": "<message type>",
@@ -124,39 +129,25 @@ Each message from Partner to AgorApp will follow the following structure:
 }
 ```
 
-To sign the message with MetaMask wallet, Partner will sign message:
-```typescript
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-const signer = await provider.getSigner();
-const signature = await signer.signMessage("<message>");
-```
-
 ### Message flow
 
 This section describes what the typical interaction between AgorApp and Partner will look like:
 
-1. User goes to the Partner website that embeds AgorApp iframe.
-2. AgoraApp iframe sends a ready message to the Partner window:
+1. User goes to the Partner website that embeds AgorApp iframe over <EmbeddedEditor ... /> component.
+2. AgoraApp iframe sends a ready `Message` to the Partner window:
 ```json
 {
   "type": "ready"
 }
 ```
-3. Partner window creates payload with user identity. Partner window sends the message to the AgoraApp iframe. 
-Note that this message is not signed with the MetaMask wallet.
-```json
-{
-  "type": "set-identity",
-  "payload": {
-    "action": "set-identity",
-    "type": "metamask",
-    "value": "<metamask public key>"
-  }
-}
+3. Partner window creates payload with user identity. Partner window sends the message to the AgoraApp iframe.
+> To send the response back to the IDE, the Partner calls the function `setIdentity` function from `useEmbeddedEditorMessage` hook.
+```typescript
+setIdentity('metamask', '<metamask public key>');
 ```
 4. AgorApp iframe remembers the user identity and will apply it to the messages it wants to verify from Partner. 
 5. User submits a solution in the AgorApp iframe.
-6. AgoraApp iframe sends a message to the Partner window for signing:
+6. AgoraApp iframe sends a sign request `Message` to the Partner window for signing.
 ```json
 {
   "type": "sign-request",
@@ -170,20 +161,16 @@ Note that this message is not signed with the MetaMask wallet.
   }
 }
 ```
-7. Partner window will sign payload with the MetaMask Wallet and get the `signature` of the message:
-```json
-{
-  "type": "sign-response",
-  "payload": {
-    "action": "submit-solution",
-    "identity": {
-      "type": "metamask",
-      "value": "<metamask public key>"
-    },
-    "solution": "<solution>"
-  },
-  "signature": "<signature of the payload>"
-}
+7. Partner window will sign payload with the MetaMask Wallet and get the `signature` of the message.
+> To sign the message with MetaMask wallet, Partner will sign message:
+```typescript
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = await provider.getSigner();
+const signature = await signer.signMessage("<message>");
+```
+> To send the response back to the IDE, the Partner calls the function `signResponse` function from `useEmbeddedEditorMessage` hook:
+```typescript
+signResponse(message.payload, signature);
 ```
 8. This signed message is sent back to the AgorApp iframe. AgoraApp backend verifies the signature, evaluates the 
 solution and stores the result in the leaderboard.
@@ -198,7 +185,6 @@ The real message will look something like this:
   "signature": "<signature of the payload>"
 }
 ```
-
 
 [npm-url]: https://www.npmjs.com/package/agorapp-react-utils
 [npm-image]: https://img.shields.io/npm/v/agorapp-react-utils
