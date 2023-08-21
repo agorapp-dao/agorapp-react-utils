@@ -1,39 +1,20 @@
-import React, { useRef } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-import {
-  EmbeddedEditor,
-  useEmbeddedEditorMessage,
-  AgorAppMessage,
-} from "agorapp-react-utils";
+import { ExampleBasic } from "./components/ExampleBasic";
+import { ExampleMetaMask } from "./components/ExampleMetaMask";
 
 export const EmbeddedTest = () => {
-  const ref = useRef<HTMLIFrameElement | null>(null);
-  const publicKey = "PUBLIC_KEY_OF_THE_USER";
-  const { setIdentity } = useEmbeddedEditorMessage(
-    async (message: AgorAppMessage) => {
-      switch (message.type) {
-        case "ready":
-          console.log(`AgorApp IDE is ready`);
-          setIdentity("metamask", publicKey);
-          break;
-        case "sign-request":
-          console.log(`AgorApp IDE requires sign-request: `, message);
-          break;
-      }
-    },
-    { ref }
-  );
   return (
-    <EmbeddedEditor
-      ref={ref}
-      aspectRatio={"4:3"}
-      courseSlug="solidity"
-      lessonSlug={"optimized-array-sum"}
-      style={{ border: "1px solid #fff", borderRadius: "15px" }}
-    />
+   <>
+     <h1>Basic example</h1>
+     <ExampleBasic />
+
+     <h1>MetaMask integration example</h1>
+     <ExampleMetaMask />
+   </>
   );
 };
 

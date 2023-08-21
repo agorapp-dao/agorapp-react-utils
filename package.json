@@ -15,7 +15,12 @@
   "author": "Petr Havel (petrhavel2)",
   "license": "ISC",
   "dependencies": {
+    "@mui/material": "^5.14.5",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
     "agorapp-react-utils": "^1.0.0",
+    "ethers": "^6.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^9.0.0"
